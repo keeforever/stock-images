@@ -1,7 +1,7 @@
 
 const Photo = ({image}) => {
   const {likes,user,description,urls} = image
-  // const {medium} = profile_image
+
   const {small,regular} = urls
   const {name,profile_image,links} = user
   const {html} =links

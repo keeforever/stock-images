@@ -1,12 +1,17 @@
-import SearchBar from "./SearchBar"
-import Gallery from "./Gallery"
+import SearchBar from "./SearchBar";
+import Gallery from "./Gallery";
+
 const Home = () => {
   return (
     <section className="app-container">
-      <SearchBar/>
-      <Gallery/>
+      <h1 className="text-center">Stock Images</h1>
+      <div>
+        <div className="underline"></div>
+      </div>
+      <SearchBar />
+      <Gallery />
     </section>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
