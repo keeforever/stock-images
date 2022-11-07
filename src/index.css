@@ -1,0 +1,153 @@
+:root{
+  --clr-slategrey: #617d98;
+  --clr-white:#ffffff;
+  --clr-black:#000000;
+  --black-10:rgb(0,0,0,0.3);
+
+  --radius:6px;
+  --transition: all .3s linear;
+  --line-height:1.2rem;
+  --spacing:.25rem;
+  --fixed-width:1227px;
+  --max-width:95vw;
+}
+*,::before,::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  font-size: 3rem;
+}
+h2{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.1rem;
+}
+h4{
+  font-size: 1rem;
+}
+p{
+  margin-bottom: 1.2rem;
+}
+
+/* app container */
+.app-container{
+  width: var(--max-width);
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+}
+
+/* search bar */
+
+.search{
+  width: 95vw;
+  max-width: 560px;
+  margin-top: 3rem;
+}
+ .search__bar{
+  position: relative;
+  border-bottom: solid var(--clr-slategrey) 3.5px;
+ }
+.search__input{
+  border: none;
+  height: 2.7rem;
+  font-size: 1.8rem;
+  width: 100%;
+  padding-left: .4rem;
+}
+.search__input:placeholder{
+  color:var(--clr-slategrey);
+}
+.search__icon{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-150%,-40%);
+  color: red;
+}
+.search__input:focus{
+  border: none;
+  outline: none;
+}
+/* gallery container */
+.gallery-container{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+/* photo container */
+.photo__container{
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.photo-main{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.author__info--hover{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  padding: .4rem .7rem;
+  background-color: var(--black-10);
+  color:var(--clr-white) ;
+  transform: translateY(100%);
+  transition: var(--transition);
+
+}
+.photo__container:hover .author__info--hover{
+  transform: translateY(0%);
+  transition: var(--transition);
+}
+.author__profile img{
+  border-radius: 50%;
+}
+.author__name{
+  margin-bottom:.5rem;
+}
+
+@media screen and (min-width:560px){
+  /* gallery container */
+  .gallery-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(298px,1fr));
+    gap: 1rem 1rem;
+  }
+  .photo-main{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* api info */
+.info-center{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  height: 200px;
+  display: grid;
+  place-content: center;
+
+}
+.empty-cell{
+  height: 200px;
+}
