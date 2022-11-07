@@ -1,12 +1,11 @@
-
-
 // is page reached bottom
-const isReachedBottom=()=>{
-  const scrollHeight=document.body.scrollHeight
-  if(window.innerHeight+window.scrollY> scrollHeight){
+const isReachedBottom = () => {
+  // 100 for decrease compare scrollHeight
+  const scrollHeight = document.body.scrollHeight - 100;
+  if (window.innerHeight + window.scrollY > scrollHeight) {
     return true;
   }
   return false;
-}
+};
 
-export {isReachedBottom}
+export { isReachedBottom };
