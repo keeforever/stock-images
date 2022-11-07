@@ -15,9 +15,9 @@ const Gallery = () => {
   const mounted = useRef(false);
 
   if (searchParams === "") {
-    url = `https://api.unsplash.com/photos/?client_id=RIa60flBLK8rFN5jfOTpqVVUbv-vegbWPGqphcqim_U&page=${reload}`;
+    url = `https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_CLIENT_ID}&page=${reload}`;
   } else {
-    url = `https://api.unsplash.com/search/photos/?client_id=RIa60flBLK8rFN5jfOTpqVVUbv-vegbWPGqphcqim_U&page=${reload}&query=${searchParams}`;
+    url = `https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_CLIENT_ID}&page=${reload}&query=${searchParams}`;
   }
 
   const { isLoading, isError, apiData } = useFetch(url);
